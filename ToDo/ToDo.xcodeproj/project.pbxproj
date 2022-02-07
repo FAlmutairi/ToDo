@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0076913427B1373900D38E76 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0076913327B1373900D38E76 /* ToDo.swift */; };
 		00BA22FD27B06261008134FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA22FC27B06261008134FA /* AppDelegate.swift */; };
 		00BA22FF27B06261008134FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA22FE27B06261008134FA /* SceneDelegate.swift */; };
 		00BA230427B06261008134FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00BA230227B06261008134FA /* Main.storyboard */; };
 		00BA230627B06263008134FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00BA230527B06263008134FA /* Assets.xcassets */; };
 		00BA230927B06263008134FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00BA230727B06263008134FA /* LaunchScreen.storyboard */; };
 		00BA231227B064F0008134FA /* ToDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA231127B064F0008134FA /* ToDoVC.swift */; };
+		00E1B61D27B12EDC00C886D3 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E1B61C27B12EDC00C886D3 /* ToDoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0076913327B1373900D38E76 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		00BA22F927B06261008134FA /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00BA22FC27B06261008134FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00BA22FE27B06261008134FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		00BA230827B06263008134FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00BA230A27B06263008134FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00BA231127B064F0008134FA /* ToDoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoVC.swift; sourceTree = "<group>"; };
+		00E1B61C27B12EDC00C886D3 /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0076913527B1374200D38E76 /* Controlls */ = {
+			isa = PBXGroup;
+			children = (
+				00BA231127B064F0008134FA /* ToDoVC.swift */,
+			);
+			path = Controlls;
+			sourceTree = "<group>";
+		};
+		0076913627B1374F00D38E76 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0076913327B1373900D38E76 /* ToDo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0076913727B1376200D38E76 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				00BA230227B06261008134FA /* Main.storyboard */,
+				00E1B61C27B12EDC00C886D3 /* ToDoCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		00BA22F027B06261008134FA = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +87,9 @@
 			children = (
 				00BA22FC27B06261008134FA /* AppDelegate.swift */,
 				00BA22FE27B06261008134FA /* SceneDelegate.swift */,
-				00BA230227B06261008134FA /* Main.storyboard */,
-				00BA231127B064F0008134FA /* ToDoVC.swift */,
+				0076913627B1374F00D38E76 /* Models */,
+				0076913727B1376200D38E76 /* Views */,
+				0076913527B1374200D38E76 /* Controlls */,
 				00BA230527B06263008134FA /* Assets.xcassets */,
 				00BA230727B06263008134FA /* LaunchScreen.storyboard */,
 				00BA230A27B06263008134FA /* Info.plist */,
@@ -139,8 +169,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				00BA22FD27B06261008134FA /* AppDelegate.swift in Sources */,
+				0076913427B1373900D38E76 /* ToDo.swift in Sources */,
 				00BA22FF27B06261008134FA /* SceneDelegate.swift in Sources */,
 				00BA231227B064F0008134FA /* ToDoVC.swift in Sources */,
+				00E1B61D27B12EDC00C886D3 /* ToDoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +321,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XTQ6YTSTUJ;
+				DEVELOPMENT_TEAM = XX3MKPH5SL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToDo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -297,12 +329,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ferasico.ToDo;
+				PRODUCT_BUNDLE_IDENTIFIER = Ferasico.ToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -315,9 +348,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XTQ6YTSTUJ;
+				DEVELOPMENT_TEAM = XX3MKPH5SL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToDo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -325,13 +359,15 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ferasico.ToDo;
+				PRODUCT_BUNDLE_IDENTIFIER = Ferasico.ToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
