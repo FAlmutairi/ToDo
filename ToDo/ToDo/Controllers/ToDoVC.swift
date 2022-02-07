@@ -10,7 +10,7 @@ import UIKit
 class ToDoVC: UIViewController {
     
     var toDoArray = [
-        ToDo(title: "الذهاب إلى النادي"),
+        ToDo(title: "الذهاب إلى النادي", details: "تم إطلاق عدة معسكرات برمجية بالتعاون مع فريق المحتوى التقني وتحت إشرافه، حيث تم تدريب عدد من الطلاب والطالبات على أهم التقنيات وأكثرها طلبًا في سوق العمل."),
         ToDo(title: "حل واجب طويق ١٠٠٠"),
         ToDo(title: "التواصل مع الناس"),
         ToDo(title: "حف ١٠ كلمات انجليزية"),
@@ -25,6 +25,7 @@ class ToDoVC: UIViewController {
         super.viewDidLoad()
         
         ToDoTableView.dataSource = self
+        ToDoTableView.delegate = self
         
     }
 
@@ -32,7 +33,7 @@ class ToDoVC: UIViewController {
 
 
 //MARK: -
-extension ToDoVC: UITableViewDataSource {
+extension ToDoVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return toDoArray.count
@@ -54,6 +55,23 @@ extension ToDoVC: UITableViewDataSource {
         return cell
         
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // the shadow disappear
+        tableView.deselectRow(at: indexPath, animated: true)
+        let todoIndext = toDoArray[indexPath.row]
+        
+        // Create Oject ToDoDetailsVC
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ToDoDetailsVC") as? ToDoDetailsVC
+        
+        if let ToDoDetailsVC = vc {
+            ToDoDetailsVC.todo = todoIndext
+            navigationController?.pushViewController(ToDoDetailsVC, animated: true)
+        }
+    }
+    
 }
 
 
