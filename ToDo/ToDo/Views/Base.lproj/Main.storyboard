@@ -99,7 +99,7 @@
         <!--New Note-->
         <scene sceneID="saX-SL-LJN">
             <objects>
-                <viewController id="W8S-Ao-FOo" sceneMemberID="viewController">
+                <viewController id="W8S-Ao-FOo" customClass="NewToDoVC" customModule="ToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rOK-tx-HgD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,7 +132,6 @@
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOk-W2-uU9">
                                         <rect key="frame" x="0.0" y="98.5" width="394" height="300"/>
-                                        <color key="backgroundColor" red="0.8862745098" green="0.87843137250000003" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="300" id="fsI-48-8f2"/>
                                         </constraints>
@@ -144,12 +143,15 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dkc-yf-DBK">
-                                <rect key="frame" x="10" y="609" width="394" height="50"/>
+                                <rect key="frame" x="10" y="608.5" width="394" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Ykv-LW-ySn"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add Note"/>
+                                <connections>
+                                    <action selector="addNewToDoPressed:" destination="W8S-Ao-FOo" eventType="touchUpInside" id="Bxl-GY-s7x"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="269-v7-uWc"/>
@@ -164,6 +166,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Note" id="Xgf-q6-SdL"/>
+                    <connections>
+                        <outlet property="NewDetailsToDo" destination="hOk-W2-uU9" id="Osy-wP-mMu"/>
+                        <outlet property="NewToDoTextField" destination="E00-iS-cGR" id="s6t-rA-dOJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uF0-ys-fnu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -264,6 +270,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="N1f-Ku-FAN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2NT-di-1Fe">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" red="0.0" green="0.67843137249999996" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

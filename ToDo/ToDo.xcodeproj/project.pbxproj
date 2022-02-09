@@ -15,6 +15,7 @@
 		00BA230627B06263008134FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00BA230527B06263008134FA /* Assets.xcassets */; };
 		00BA230927B06263008134FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00BA230727B06263008134FA /* LaunchScreen.storyboard */; };
 		00BA231227B064F0008134FA /* ToDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA231127B064F0008134FA /* ToDoVC.swift */; };
+		00C624FF27B3FF8B0088BB3F /* NewToDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C624FE27B3FF8B0088BB3F /* NewToDoVC.swift */; };
 		00E1B61D27B12EDC00C886D3 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E1B61C27B12EDC00C886D3 /* ToDoCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		00BA230827B06263008134FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00BA230A27B06263008134FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00BA231127B064F0008134FA /* ToDoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoVC.swift; sourceTree = "<group>"; };
+		00C624FE27B3FF8B0088BB3F /* NewToDoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToDoVC.swift; sourceTree = "<group>"; };
 		00E1B61C27B12EDC00C886D3 /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,6 +50,7 @@
 			children = (
 				00BA231127B064F0008134FA /* ToDoVC.swift */,
 				0057E55227B1792300A6428B /* ToDoDetailsVC.swift */,
+				00C624FE27B3FF8B0088BB3F /* NewToDoVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00C624FF27B3FF8B0088BB3F /* NewToDoVC.swift in Sources */,
 				00BA22FD27B06261008134FA /* AppDelegate.swift in Sources */,
 				0076913427B1373900D38E76 /* ToDo.swift in Sources */,
 				00BA22FF27B06261008134FA /* SceneDelegate.swift in Sources */,

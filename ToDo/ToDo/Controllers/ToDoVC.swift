@@ -24,9 +24,23 @@ class ToDoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // review imported
+        NotificationCenter.default.addObserver(self, selector: #selector (newToDoAdded), name: NSNotification.Name(rawValue: "AddNewToDo"), object: nil)
         ToDoTableView.dataSource = self
         ToDoTableView.delegate = self
         
+    }
+    
+    
+    @objc func newToDoAdded(notification: Notification){
+        
+        if let toDo = notification.userInfo?["AddedToDo"] as? ToDo {
+            toDoArray.append(toDo)
+            ToDoTableView.reloadData() // اعادة تحميل الجدول
+        }
+        
+         // استقبال البيانات من كلاس نيو تودو في سي
+       
     }
 
 }
