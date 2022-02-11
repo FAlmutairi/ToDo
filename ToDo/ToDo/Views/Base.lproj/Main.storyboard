@@ -99,7 +99,7 @@
         <!--New Note-->
         <scene sceneID="saX-SL-LJN">
             <objects>
-                <viewController id="W8S-Ao-FOo" customClass="NewToDoVC" customModule="ToDo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewToDoVC" id="W8S-Ao-FOo" customClass="NewToDoVC" customModule="ToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rOK-tx-HgD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -169,6 +169,7 @@
                     <connections>
                         <outlet property="NewDetailsToDo" destination="hOk-W2-uU9" id="Osy-wP-mMu"/>
                         <outlet property="NewToDoTextField" destination="E00-iS-cGR" id="s6t-rA-dOJ"/>
+                        <outlet property="mainButton" destination="Dkc-yf-DBK" id="p7H-Bb-zZY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uF0-ys-fnu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -210,24 +211,45 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0v-A1-h6u">
-                                <rect key="frame" x="20" y="508" width="374" height="142.5"/>
+                                <rect key="frame" x="20" y="508" width="374" height="144"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="144" id="GqD-sc-SWa"/>
+                                    <constraint firstAttribute="width" constant="374" id="jk1-PF-nmA"/>
+                                </constraints>
                                 <string key="text">تم إطلاق عدة معسكرات برمجية بالتعاون مع فريق المحتوى التقني وتحت إشرافه، حيث تم تدريب عدد من الطلاب والطالبات على أهم التقنيات وأكثرها طلبًا في سوق العمل.تم إطلاق عدة معسكرات برمجية بالتعاون مع فريق المحتوى التقني وتحت إشرافه، حيث تم تدريب عدد من الطلاب والطالبات على أهم التقنيات وأكثرها طلبًا في سوق العمل.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2h1-Ph-9UJ">
+                                <rect key="frame" x="150" y="742" width="114" height="50"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ksj-sV-u4v"/>
+                                </constraints>
+                                <color key="tintColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Edit"/>
+                                <connections>
+                                    <action selector="editToDoPressed:" destination="Bfe-tR-EqU" eventType="touchUpInside" id="QQm-TZ-eOB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oPw-M2-BAO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="I0v-A1-h6u" firstAttribute="top" secondItem="LhF-uC-k6M" secondAttribute="bottom" constant="30" id="8Ry-Ad-S6n"/>
+                            <constraint firstItem="oPw-M2-BAO" firstAttribute="trailing" secondItem="2h1-Ph-9UJ" secondAttribute="trailing" constant="150" id="LG6-Cw-ahn"/>
                             <constraint firstItem="Icp-jU-919" firstAttribute="centerX" secondItem="oPw-M2-BAO" secondAttribute="centerX" id="McE-hw-pY9"/>
+                            <constraint firstItem="2h1-Ph-9UJ" firstAttribute="top" secondItem="I0v-A1-h6u" secondAttribute="bottom" constant="90" id="U7z-Oe-Qlg"/>
                             <constraint firstAttribute="trailing" secondItem="Icp-jU-919" secondAttribute="trailing" id="VJr-sZ-JvB"/>
+                            <constraint firstItem="2h1-Ph-9UJ" firstAttribute="leading" secondItem="oPw-M2-BAO" secondAttribute="leading" constant="150" id="VcH-RR-snO"/>
                             <constraint firstAttribute="trailing" secondItem="LhF-uC-k6M" secondAttribute="trailing" id="dvY-oT-2GX"/>
                             <constraint firstItem="I0v-A1-h6u" firstAttribute="leading" secondItem="oPw-M2-BAO" secondAttribute="leading" constant="20" id="edg-Uv-gO3"/>
                             <constraint firstItem="LhF-uC-k6M" firstAttribute="top" secondItem="Icp-jU-919" secondAttribute="bottom" constant="24" id="gJS-2r-By5"/>
                             <constraint firstItem="Icp-jU-919" firstAttribute="top" secondItem="oPw-M2-BAO" secondAttribute="top" id="hVm-iv-zEH"/>
                             <constraint firstItem="Icp-jU-919" firstAttribute="leading" secondItem="kEt-XX-OdC" secondAttribute="leading" id="jum-yO-Mu6"/>
+                            <constraint firstItem="oPw-M2-BAO" firstAttribute="bottom" secondItem="2h1-Ph-9UJ" secondAttribute="bottom" constant="70" id="lNB-Fr-YCW"/>
                             <constraint firstItem="oPw-M2-BAO" firstAttribute="trailing" secondItem="I0v-A1-h6u" secondAttribute="trailing" constant="20" id="t1Z-K6-wpO"/>
                             <constraint firstItem="LhF-uC-k6M" firstAttribute="leading" secondItem="kEt-XX-OdC" secondAttribute="leading" id="wz1-2p-GiE"/>
                         </constraints>

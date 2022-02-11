@@ -33,6 +33,19 @@ class ToDoDetailsVC: UIViewController {
     }
     
 
+    @IBAction func editToDoPressed(_ sender: UIButton) {
+        
+        if let ViewController = storyboard?.instantiateViewController(withIdentifier: "NewToDoVC") as? NewToDoVC {
+            
+            ViewController.isCreation = false
+            ViewController.editToDo = todo
+            
+            navigationController?.pushViewController(ViewController, animated: true)
+           
+            
+        }
+        
+    }
     /*
     // MARK: - Navigation
 
