@@ -24,14 +24,20 @@ class ToDoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // review imported
+        // review imported - insert New ToDo
         NotificationCenter.default.addObserver(self, selector: #selector (newToDoAdded), name: NSNotification.Name(rawValue: "AddNewToDo"), object: nil)
+        
+        // review imported - Edit ToDo
+        NotificationCenter.default.addObserver(self, selector: #selector (ToDoEdited), name: NSNotification.Name(rawValue: "CurrentToDoEdited"), object: nil)
+        
+        
         ToDoTableView.dataSource = self
         ToDoTableView.delegate = self
         
     }
     
     
+    // review imported - insert New ToDo
     @objc func newToDoAdded(notification: Notification){
         
         if let toDo = notification.userInfo?["AddedToDo"] as? ToDo {
@@ -39,13 +45,25 @@ class ToDoVC: UIViewController {
             ToDoTableView.reloadData() // اعادة تحميل الجدول
         }
         
-         // استقبال البيانات من كلاس نيو تودو في سي
-       
+        // استقبال البيانات من كلاس نيو تودو في سي
+        
     }
+    
+    
+    // review imported - Edit ToDo
+    @objc func ToDoEdited(notification: Notification){
+        
+        if let toDo = notification.userInfo?["editToDo"] as? ToDo {
+            if let index = notification.userInfo?["editedToDoIndex"] as? Int{
+                toDoArray[index] = toDo
+                ToDoTableView.reloadData()
+            }
+             // اعادة تحميل الجدول
+        }
 
 }
 
-
+}
 //MARK: -
 extension ToDoVC: UITableViewDataSource, UITableViewDelegate {
     
@@ -75,13 +93,14 @@ extension ToDoVC: UITableViewDataSource, UITableViewDelegate {
         
         // the shadow disappear
         tableView.deselectRow(at: indexPath, animated: true)
-        let todoIndext = toDoArray[indexPath.row]
+        let todo = toDoArray[indexPath.row]
         
         // Create Oject ToDoDetailsVC
         let vc = storyboard?.instantiateViewController(withIdentifier: "ToDoDetailsVC") as? ToDoDetailsVC
         
         if let ToDoDetailsVC = vc {
-            ToDoDetailsVC.todo = todoIndext
+            ToDoDetailsVC.todo = todo
+            ToDoDetailsVC.index = indexPath.row
             navigationController?.pushViewController(ToDoDetailsVC, animated: true)
         }
     }

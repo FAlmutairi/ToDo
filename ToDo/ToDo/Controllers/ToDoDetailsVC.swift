@@ -16,6 +16,7 @@ class ToDoDetailsVC: UIViewController {
     // Definition of the variable as optional from begining better than use optional everyrime when use the variable (save our time)
     
     var todo: ToDo!
+    var index: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +31,22 @@ class ToDoDetailsVC: UIViewController {
         ToDoDetailsLabel.text = todo.details
         ToDoTitleLeabel.text = todo.title
         
+        NotificationCenter.default.addObserver(self, selector: #selector (ToDoEdited), name: NSNotification.Name(rawValue: "CurrentToDoEdited"), object: nil)
+
+        
     }
     
+    
+    // review imported - Edit ToDo
+    @objc func ToDoEdited(notification: Notification){
+        
+        if let toDo = notification.userInfo?["editToDo"] as? ToDo {
+            self.todo = toDo
+            self.ToDoDetailsLabel.text = todo.details
+            self.ToDoTitleLeabel.text = todo.title
+        }
+
+}
 
     @IBAction func editToDoPressed(_ sender: UIButton) {
         
@@ -39,21 +54,12 @@ class ToDoDetailsVC: UIViewController {
             
             ViewController.isCreation = false
             ViewController.editToDo = todo
-            
+            ViewController.editedToDoIndex = index
             navigationController?.pushViewController(ViewController, animated: true)
            
             
         }
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

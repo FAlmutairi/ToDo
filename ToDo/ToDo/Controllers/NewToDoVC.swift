@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewToDoVC: UIViewController {
+class NewToDoVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var NewToDoTextField: UITextField!
     @IBOutlet weak var NewDetailsToDo: UITextView!
@@ -16,6 +16,7 @@ class NewToDoVC: UIViewController {
     // if we create new ToDo
     var isCreation = true
     var editToDo: ToDo?
+    var editedToDoIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +44,31 @@ class NewToDoVC: UIViewController {
             let todo = ToDo(title: NewToDoTextField.text!, details: NewDetailsToDo.text!)
             // review imported
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "AddNewToDo"), object: nil, userInfo: ["AddedToDo": todo])
+            
             let alert = UIAlertController(title: "Done", message: " have benn added", preferredStyle: UIAlertController.Style.alert)
-            let closeAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+            let closeAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default){ _ in
+                self.tabBarController?.selectedIndex = 0
+                self.NewToDoTextField.text = ""
+                self.NewDetailsToDo.text = ""
+            }
             alert.addAction(closeAction)
             present(alert, animated: true, completion: nil)
+        
+            
+        } else {
+            
+            let toDoEdit = ToDo(title: NewToDoTextField.text!, details: NewDetailsToDo.text!)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CurrentToDoEdited"), object: nil, userInfo: ["editToDo": toDoEdit, "editedToDoIndex": editedToDoIndex!])
+            
+            let alert = UIAlertController(title: "Done", message: " have benn Edited", preferredStyle: UIAlertController.Style.alert)
+            let closeAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default){ _ in
+                self.navigationController?.popViewController(animated: true)
+                self.NewToDoTextField.text = ""
+                self.NewDetailsToDo.text = ""
+            }
+            alert.addAction(closeAction)
+            present(alert, animated: true, completion: nil)
+            
         }
    
     }
@@ -54,35 +76,3 @@ class NewToDoVC: UIViewController {
 }
 
 
-// MARK: - UITextFieldDelegate
-extension NewToDoVC: UITextFieldDelegate{
-    
-//    // This function help us to press return button instead of search button
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        print(NewToDoTextField.text!)
-//        NewToDoTextField.endEditing(true)
-//        return true
-//    }
-//
-//
-//    //
-//    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-//        if textField.text != "" {
-//            return true
-//
-//        } else {
-//            textField.placeholder = "Type something"
-//            return false
-//        }
-//    }
-//
-//
-//    // Use searchTexTField.Text. to got the weather for that city.
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//
-//        // To clear TextField after press on search button
-//        NewToDoTextField.text = ""
-//
-//    }
-    
-}
