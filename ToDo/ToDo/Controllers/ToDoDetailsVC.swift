@@ -56,10 +56,36 @@ class ToDoDetailsVC: UIViewController {
             ViewController.editToDo = todo
             ViewController.editedToDoIndex = index
             navigationController?.pushViewController(ViewController, animated: true)
-           
             
         }
         
     }
     
+    
+    @IBAction func DeletePressed(_ sender: UIButton) {
+        
+        let confirmAlert = UIAlertController(title: "تنبية", message: " هل انت متاكد من الحذف", preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "تأكيد الحذف", style: .destructive) { alert in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ToDoDeleted"), object: nil, userInfo: ["DeletedToDoIndex": self.index])
+            
+            let alert = UIAlertController(title: "Done", message: " have benn Deleted", preferredStyle: UIAlertController.Style.alert)
+            let closeAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default){ _ in
+                self.navigationController?.popViewController(animated: true)
+            }
+            alert.addAction(closeAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+        confirmAlert.addAction(confirmAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancell", style: .cancel, handler: nil)
+        confirmAlert.addAction(cancelAction)
+        
+        self.present(confirmAlert, animated: true, completion: nil)
+        
+       
+        
+    }
+    
+    
 }
+

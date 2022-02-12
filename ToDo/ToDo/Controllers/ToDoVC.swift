@@ -17,6 +17,14 @@ class ToDoVC: UIViewController {
         ToDo(title: "مشاهدة معسكر طويق"),
         ToDo(title: "مشاهدة مسلسل اوزارك"),
         ToDo(title: "مشاهدة مباراة الهلال"),
+        ToDo(title: "حف ١٠ كلمات انجليزية"),
+        ToDo(title: "مشاهدة معسكر طويق"),
+        ToDo(title: "مشاهدة مسلسل اوزارك"),
+        ToDo(title: "مشاهدة مباراة الهلال"),
+        ToDo(title: "حف ١٠ كلمات انجليزية"),
+        ToDo(title: "مشاهدة معسكر طويق"),
+        ToDo(title: "مشاهدة مسلسل اوزارك"),
+        ToDo(title: "مشاهدة مباراة الهلال"),
     ]
     
     @IBOutlet weak var ToDoTableView: UITableView!
@@ -30,6 +38,9 @@ class ToDoVC: UIViewController {
         // review imported - Edit ToDo
         NotificationCenter.default.addObserver(self, selector: #selector (ToDoEdited), name: NSNotification.Name(rawValue: "CurrentToDoEdited"), object: nil)
         
+        
+        //review imported - Delete ToDo
+        NotificationCenter.default.addObserver(self, selector: #selector (ToDoDeleted), name: NSNotification.Name(rawValue: "ToDoDeleted"), object: nil)
         
         ToDoTableView.dataSource = self
         ToDoTableView.delegate = self
@@ -63,7 +74,18 @@ class ToDoVC: UIViewController {
 
 }
 
+    
+    // review imported - Edit ToDo
+    @objc func ToDoDeleted(notification: Notification){
+        if let index = notification.userInfo?["DeletedToDoIndex"] as? Int{
+            toDoArray.remove(at: index)
+                ToDoTableView.reloadData()
+            }
+             // اعادة تحميل الجدول
+        }
+
 }
+
 //MARK: -
 extension ToDoVC: UITableViewDataSource, UITableViewDelegate {
     
