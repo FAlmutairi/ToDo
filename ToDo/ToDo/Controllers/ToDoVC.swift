@@ -16,21 +16,21 @@ class ToDoVC: UIViewController {
         ToDo(title: "حف ١٠ كلمات انجليزية"),
         ToDo(title: "مشاهدة معسكر طويق"),
         ToDo(title: "مشاهدة مسلسل اوزارك"),
-        ToDo(title: "مشاهدة مباراة الهلال"),
-        ToDo(title: "حف ١٠ كلمات انجليزية"),
-        ToDo(title: "مشاهدة معسكر طويق"),
-        ToDo(title: "مشاهدة مسلسل اوزارك"),
-        ToDo(title: "مشاهدة مباراة الهلال"),
-        ToDo(title: "حف ١٠ كلمات انجليزية"),
-        ToDo(title: "مشاهدة معسكر طويق"),
-        ToDo(title: "مشاهدة مسلسل اوزارك"),
-        ToDo(title: "مشاهدة مباراة الهلال"),
+        ToDo(title: "مشاهدة مباراة الهلال")
+    
     ]
     
     @IBOutlet weak var ToDoTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        ToDoTableView.separatorStyle = .none
+        
+      
+        
+        
         
         // review imported - insert New ToDo
         NotificationCenter.default.addObserver(self, selector: #selector (newToDoAdded), name: NSNotification.Name(rawValue: "AddNewToDo"), object: nil)
@@ -89,6 +89,8 @@ class ToDoVC: UIViewController {
 //MARK: -
 extension ToDoVC: UITableViewDataSource, UITableViewDelegate {
     
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return toDoArray.count
     }
@@ -106,7 +108,15 @@ extension ToDoVC: UITableViewDataSource, UITableViewDelegate {
             cell.toDoImage.image = UIImage(named: "imageDefult")
         }
       
+        
+        cell.viewCell.layer.cornerRadius = 10
+        cell.viewCell.layer.shadowColor = UIColor.black.cgColor
+        cell.viewCell.layer.shadowOffset = CGSize(width: 2, height: 2)
+        cell.viewCell.layer.shadowRadius = 0.9
+        cell.viewCell.layer.shadowOpacity = 0.1
+        
         return cell
+        
         
     }
     

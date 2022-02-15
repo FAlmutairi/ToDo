@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0002655A27BC1F0B00970826 /* Cairo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0002655627BC1F0B00970826 /* Cairo-Medium.ttf */; };
+		0002655B27BC1F0B00970826 /* Cairo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0002655727BC1F0B00970826 /* Cairo-Black.ttf */; };
+		0002655C27BC1F0B00970826 /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0002655827BC1F0B00970826 /* Cairo-Regular.ttf */; };
+		0002655D27BC1F0B00970826 /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0002655927BC1F0B00970826 /* Cairo-Bold.ttf */; };
 		0057E55327B1792300A6428B /* ToDoDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057E55227B1792300A6428B /* ToDoDetailsVC.swift */; };
 		0076913427B1373900D38E76 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0076913327B1373900D38E76 /* ToDo.swift */; };
 		00BA22FD27B06261008134FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA22FC27B06261008134FA /* AppDelegate.swift */; };
@@ -20,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0002655627BC1F0B00970826 /* Cairo-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Medium.ttf"; sourceTree = "<group>"; };
+		0002655727BC1F0B00970826 /* Cairo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Black.ttf"; sourceTree = "<group>"; };
+		0002655827BC1F0B00970826 /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
+		0002655927BC1F0B00970826 /* Cairo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Bold.ttf"; sourceTree = "<group>"; };
 		0057E55227B1792300A6428B /* ToDoDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailsVC.swift; sourceTree = "<group>"; };
 		0076913327B1373900D38E76 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		00BA22F927B06261008134FA /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +53,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0002655527BC1EC600970826 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0002655727BC1F0B00970826 /* Cairo-Black.ttf */,
+				0002655927BC1F0B00970826 /* Cairo-Bold.ttf */,
+				0002655627BC1F0B00970826 /* Cairo-Medium.ttf */,
+				0002655827BC1F0B00970826 /* Cairo-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		0076913527B1374200D38E76 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +110,7 @@
 		00BA22FB27B06261008134FA /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
+				0002655527BC1EC600970826 /* Fonts */,
 				00BA22FC27B06261008134FA /* AppDelegate.swift */,
 				00BA22FE27B06261008134FA /* SceneDelegate.swift */,
 				0076913627B1374F00D38E76 /* Models */,
@@ -161,9 +181,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0002655C27BC1F0B00970826 /* Cairo-Regular.ttf in Resources */,
+				0002655A27BC1F0B00970826 /* Cairo-Medium.ttf in Resources */,
 				00BA230927B06263008134FA /* LaunchScreen.storyboard in Resources */,
+				0002655B27BC1F0B00970826 /* Cairo-Black.ttf in Resources */,
 				00BA230627B06263008134FA /* Assets.xcassets in Resources */,
 				00BA230427B06261008134FA /* Main.storyboard in Resources */,
+				0002655D27BC1F0B00970826 /* Cairo-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
