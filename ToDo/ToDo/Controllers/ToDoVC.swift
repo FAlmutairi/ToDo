@@ -6,31 +6,23 @@
 //
 
 import UIKit
+import CoreData
 
 class ToDoVC: UIViewController {
     
-    var toDoArray = [
-        ToDo(title: "الذهاب إلى النادي", details: "تم إطلاق عدة معسكرات برمجية بالتعاون مع فريق المحتوى التقني وتحت إشرافه، حيث تم تدريب عدد من الطلاب والطالبات على أهم التقنيات وأكثرها طلبًا في سوق العمل."),
-        ToDo(title: "حل واجب طويق ١٠٠٠"),
-        ToDo(title: "التواصل مع الناس"),
-        ToDo(title: "حف ١٠ كلمات انجليزية"),
-        ToDo(title: "مشاهدة معسكر طويق"),
-        ToDo(title: "مشاهدة مسلسل اوزارك"),
-        ToDo(title: "مشاهدة مباراة الهلال")
-    
-    ]
+    var toDoArray:[ToDo] = []
     
     @IBOutlet weak var ToDoTableView: UITableView!
     
     override func viewDidLoad() {
+        self.toDoArray = getTodo()
+        
         super.viewDidLoad()
         
         
         ToDoTableView.separatorStyle = .none
         
       
-        
-        
         
         // review imported - insert New ToDo
         NotificationCenter.default.addObserver(self, selector: #selector (newToDoAdded), name: NSNotification.Name(rawValue: "AddNewToDo"), object: nil)
@@ -54,6 +46,8 @@ class ToDoVC: UIViewController {
         if let toDo = notification.userInfo?["AddedToDo"] as? ToDo {
             toDoArray.append(toDo)
             ToDoTableView.reloadData() // اعادة تحميل الجدول
+            
+            storeToDo(todo: toDo)
         }
         
         // استقبال البيانات من كلاس نيو تودو في سي
@@ -83,6 +77,57 @@ class ToDoVC: UIViewController {
             }
              // اعادة تحميل الجدول
         }
+    
+    
+    
+    
+    func storeToDo(todo: ToDo) {
+        
+        guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let manageContext = appdelegate.persistentContainer.viewContext
+        
+        guard let todoEntity = NSEntityDescription.entity(forEntityName: "Todo", in: manageContext) else {return}
+        let todoCoreData = NSManagedObject.init(entity: todoEntity, insertInto: manageContext)
+        todoCoreData.setValue(todo.title, forKey: "title")
+        todoCoreData.setValue(todo.details, forKey: "details")
+        
+        do{
+            try manageContext.save()
+            print("===== Success =====")
+        } catch{
+            print("===== Error =====")
+        }
+        
+    }
+    
+    func getTodo() -> [ToDo] {
+        
+        var todos: [ToDo] = []
+        
+        guard let  appDelegate = UIApplication.shared.delegate as? AppDelegate else { return [] }
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Todo")
+        
+        do{
+            let result =  try context.fetch(fetchRequest) as! [NSManagedObject]
+            
+            for managedTodo in result {
+                let title = managedTodo.value(forKey: "title") as! String
+                let details = managedTodo.value(forKey: "details") as! String
+                let todo = ToDo(title: title, details: details)
+                todos.append(todo)
+                
+                
+            }
+        } catch{
+            print("Error")
+        }
+        
+        return todos
+    }
+    
+    
+    
 
 }
 

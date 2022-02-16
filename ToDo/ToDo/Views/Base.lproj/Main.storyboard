@@ -121,12 +121,13 @@
                                                 <color key="textColor" red="0.18823529410000001" green="0.1960784314" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E00-iS-cGR">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="م" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E00-iS-cGR">
                                                 <rect key="frame" x="0.0" y="30.5" width="394" height="50"/>
                                                 <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="3Ae-J4-do7"/>
                                                 </constraints>
+                                                <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -135,7 +136,7 @@
                                             <constraint firstItem="E00-iS-cGR" firstAttribute="width" secondItem="db8-Jn-jJu" secondAttribute="width" id="832-Wd-ttV"/>
                                         </constraints>
                                     </stackView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="تفاصيل المهام" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="hOk-W2-uU9">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="hOk-W2-uU9">
                                         <rect key="frame" x="0.0" y="100.5" width="394" height="300"/>
                                         <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -189,43 +190,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageDefult" translatesAutoresizingMaskIntoConstraints="NO" id="Icp-jU-919">
-                                <rect key="frame" x="0.0" y="44" width="414" height="350"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="5JO-in-qmd"/>
-                                    <constraint firstAttribute="width" constant="414" id="cPi-5b-Uyy"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LhF-uC-k6M">
-                                <rect key="frame" x="0.0" y="418" width="414" height="60"/>
+                                <rect key="frame" x="12" y="94" width="390" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmH-we-Lw1">
-                                        <rect key="frame" x="8" y="12" width="398" height="36"/>
+                                        <rect key="frame" x="8" y="12" width="370" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.17254901959999999" green="0.1843137255" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="GmH-we-Lw1" firstAttribute="top" secondItem="LhF-uC-k6M" secondAttribute="top" constant="12" id="EYV-NN-0xl"/>
                                     <constraint firstAttribute="bottom" secondItem="GmH-we-Lw1" secondAttribute="bottom" constant="12" id="I7b-Aa-C1J"/>
                                     <constraint firstItem="GmH-we-Lw1" firstAttribute="leading" secondItem="LhF-uC-k6M" secondAttribute="leading" constant="8" id="NBb-7S-q2T"/>
-                                    <constraint firstAttribute="trailing" secondItem="GmH-we-Lw1" secondAttribute="trailing" constant="8" id="UMm-Gp-elW"/>
+                                    <constraint firstAttribute="trailing" secondItem="GmH-we-Lw1" secondAttribute="trailing" constant="12" id="UMm-Gp-elW"/>
                                     <constraint firstAttribute="height" constant="60" id="kJv-GS-dVx"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0v-A1-h6u">
-                                <rect key="frame" x="20" y="508" width="374" height="144"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="144" id="GqD-sc-SWa"/>
-                                    <constraint firstAttribute="width" constant="374" id="jk1-PF-nmA"/>
-                                </constraints>
-                                <string key="text">تم إطلاق عدة معسكرات برمجية بالتعاون مع فريق المحتوى التقني وتحت إشرافه، حيث تم تدريب عدد من الطلاب والطالبات على أهم التقنيات وأكثرها طلبًا في سوق العمل.تم إطلاق عدة معسكرات برمجية بالتعاون مع فريق المحتوى التقني وتحت إشرافه، حيث تم تدريب عدد من الطلاب والطالبات على أهم التقنيات وأكثرها طلبًا في سوق العمل.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2h1-Ph-9UJ">
                                 <rect key="frame" x="50" y="688" width="314" height="31"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -254,32 +237,39 @@
                                     <action selector="DeletePressed:" destination="Bfe-tR-EqU" eventType="touchUpInside" id="y1n-Po-X8p"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0v-A1-h6u">
+                                <rect key="frame" x="20" y="169" width="374" height="234"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="400" id="GqD-sc-SWa"/>
+                                    <constraint firstAttribute="width" constant="374" id="jk1-PF-nmA"/>
+                                </constraints>
+                                <string key="text">تم إطلاق عدة معسكرات برمجية بالتعاون مع فريق المحتوى التقني وتحت إشرافه، حيث تم تدريب عدد من الطلاب والطالبات على أهم التقنيات وأكثرها طلبًا في سوق العمل.تم إطلاق عدة معسكرات برمجية بالتعاون مع فريق المحتوى التقني وتحت إشرافه، حيث تم تدريب عدد من الطلاب والطالبات على أهم التقنيات وأكثرها طلبًا في سوق العمل.</string>
+                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
+                                <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oPw-M2-BAO"/>
-                        <color key="backgroundColor" red="0.14901960780000001" green="0.15686274510000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oPw-M2-BAO" firstAttribute="trailing" secondItem="2h1-Ph-9UJ" secondAttribute="trailing" constant="50" id="0HY-Qw-NTC"/>
-                            <constraint firstItem="I0v-A1-h6u" firstAttribute="top" secondItem="LhF-uC-k6M" secondAttribute="bottom" constant="30" id="8Ry-Ad-S6n"/>
+                            <constraint firstItem="I0v-A1-h6u" firstAttribute="top" secondItem="LhF-uC-k6M" secondAttribute="bottom" constant="15" id="8Ry-Ad-S6n"/>
                             <constraint firstItem="2h1-Ph-9UJ" firstAttribute="leading" secondItem="oPw-M2-BAO" secondAttribute="leading" constant="50" id="Kz3-Ua-fbZ"/>
-                            <constraint firstItem="Icp-jU-919" firstAttribute="centerX" secondItem="oPw-M2-BAO" secondAttribute="centerX" id="McE-hw-pY9"/>
                             <constraint firstItem="GB5-Ez-nXU" firstAttribute="leading" secondItem="oPw-M2-BAO" secondAttribute="leading" constant="50" id="PAc-hV-0vc"/>
                             <constraint firstItem="GB5-Ez-nXU" firstAttribute="top" secondItem="2h1-Ph-9UJ" secondAttribute="bottom" constant="20" id="R4z-Qc-vlQ"/>
-                            <constraint firstAttribute="trailing" secondItem="Icp-jU-919" secondAttribute="trailing" id="VJr-sZ-JvB"/>
-                            <constraint firstAttribute="trailing" secondItem="LhF-uC-k6M" secondAttribute="trailing" id="dvY-oT-2GX"/>
+                            <constraint firstItem="oPw-M2-BAO" firstAttribute="trailing" secondItem="LhF-uC-k6M" secondAttribute="trailing" constant="12" id="UM3-rk-IUi"/>
+                            <constraint firstItem="LhF-uC-k6M" firstAttribute="leading" secondItem="oPw-M2-BAO" secondAttribute="leading" constant="12" id="YHz-yK-anc"/>
+                            <constraint firstAttribute="trailing" secondItem="LhF-uC-k6M" secondAttribute="trailing" constant="12" id="dvY-oT-2GX"/>
                             <constraint firstItem="I0v-A1-h6u" firstAttribute="leading" secondItem="oPw-M2-BAO" secondAttribute="leading" constant="20" id="edg-Uv-gO3"/>
-                            <constraint firstItem="LhF-uC-k6M" firstAttribute="top" secondItem="Icp-jU-919" secondAttribute="bottom" constant="24" id="gJS-2r-By5"/>
-                            <constraint firstItem="Icp-jU-919" firstAttribute="top" secondItem="oPw-M2-BAO" secondAttribute="top" id="hVm-iv-zEH"/>
-                            <constraint firstItem="Icp-jU-919" firstAttribute="leading" secondItem="kEt-XX-OdC" secondAttribute="leading" id="jum-yO-Mu6"/>
-                            <constraint firstItem="2h1-Ph-9UJ" firstAttribute="top" secondItem="I0v-A1-h6u" secondAttribute="bottom" constant="36" id="lMh-r2-jLo"/>
                             <constraint firstItem="oPw-M2-BAO" firstAttribute="trailing" secondItem="GB5-Ez-nXU" secondAttribute="trailing" constant="50" id="pFS-RA-ibN"/>
                             <constraint firstItem="oPw-M2-BAO" firstAttribute="bottom" secondItem="GB5-Ez-nXU" secondAttribute="bottom" constant="93" id="qJD-7n-8bD"/>
+                            <constraint firstItem="LhF-uC-k6M" firstAttribute="top" secondItem="oPw-M2-BAO" secondAttribute="top" constant="50" id="sgt-Zu-ubW"/>
                             <constraint firstItem="oPw-M2-BAO" firstAttribute="trailing" secondItem="I0v-A1-h6u" secondAttribute="trailing" constant="20" id="t1Z-K6-wpO"/>
-                            <constraint firstItem="LhF-uC-k6M" firstAttribute="leading" secondItem="kEt-XX-OdC" secondAttribute="leading" id="wz1-2p-GiE"/>
+                            <constraint firstItem="LhF-uC-k6M" firstAttribute="leading" secondItem="kEt-XX-OdC" secondAttribute="leading" constant="12" id="wz1-2p-GiE"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="ToDoDetailsLabel" destination="I0v-A1-h6u" id="khg-nv-410"/>
-                        <outlet property="ToDoImage" destination="Icp-jU-919" id="bgL-cp-Kw6"/>
                         <outlet property="ToDoTitleLeabel" destination="GmH-we-Lw1" id="9xg-Eq-10Q"/>
                     </connections>
                 </viewController>
@@ -351,7 +341,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rp2-5X-Ro9">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.1176470588" green="0.68235294120000001" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -369,7 +359,6 @@
     </scenes>
     <resources>
         <image name="house.fill" catalog="system" width="128" height="106"/>
-        <image name="imageDefult" width="1024" height="1024"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

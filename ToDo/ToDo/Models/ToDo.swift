@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 struct ToDo{
     var title: String

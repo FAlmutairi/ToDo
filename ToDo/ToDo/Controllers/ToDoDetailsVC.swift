@@ -26,7 +26,7 @@ class ToDoDetailsVC: UIViewController {
         if todo.image != nil{
             ToDoImage.image = todo.image
         } else{
-            ToDoImage.image = UIImage(named: "imageDefult")
+//            ToDoImage.image = UIImage(named: "imageDefult")
         }
         ToDoDetailsLabel.text = todo.details
         ToDoTitleLeabel.text = todo.title

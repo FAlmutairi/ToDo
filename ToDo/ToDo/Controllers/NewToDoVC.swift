@@ -74,5 +74,3 @@ class NewToDoVC: UIViewController, UITextFieldDelegate {
     }
 
 }
-
-
